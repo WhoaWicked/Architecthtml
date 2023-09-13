@@ -1,0 +1,539 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IT Project</title>
+    <style>
+        body {
+            background-color: #221540;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        header {
+            background: url("https://images.unsplash.com/photo-1511447333015-45b65e60f6d5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1910&q=80");
+            height: 450px;
+            background-size: cover;
+            background-position-y: -220px;
+            color: white;
+            box-shadow: inset 0 0 0 2000px rgba(0, 0, 0, .6);
+        }
+
+        nav {
+            padding-top: 1.8rem;
+        }
+
+        .nav-r ul {
+            display: flex;
+            list-style: none;
+            justify-content: space-evenly;
+            align-items: center;
+        }
+
+        .nav-r li a {
+            text-decoration: none;
+            color: rgb(135, 135, 135);
+            transition: 0.4s ease-in-out;
+            font-size: 1.2rem;
+        }
+
+        .nav-r a:hover {
+            color: white;
+            padding-bottom: .3rem;
+            border-bottom: 2.5px solid white;
+        }
+
+        .header-info {
+            text-align: center;
+            margin-top: 8rem;
+        }
+
+        .header-info h1 {
+            text-transform: uppercase;
+            font-size: 4rem;
+        }
+
+        .header-footer-in {
+            position: absolute;
+            width: 100%;
+            height: 30px;
+            background-color: #4a1f60;
+            box-shadow: 3px 3px 10px rgba(0, 0, 0, .7);
+            z-index: 999;
+            top: 1px;
+        }
+
+        #fb-info {
+            padding: 3rem 0;
+        }
+
+        #fb-info p {
+            color: white;
+            font-size: 1.4rem;
+        }
+
+        #fb-info img {
+            width: 100%;
+            height: auto;
+            margin-bottom: 1rem;
+            border: 5px solid #c2a8ff;
+            border-radius: 10px;
+        }
+
+        .ku-box {
+            background: #442B7E;
+            padding: 2rem;
+            border-radius: 10px;
+            transition: 0.2s ease-in-out;
+            margin-bottom: 4rem;
+        }
+
+        .ku-box:hover {
+            box-shadow: 5px 5px 10px rgba(0, 0, 0, .7);
+        }
+
+        .ku-box-1 {
+            background: #442B7E;
+            padding: 2rem;
+            border-radius: 10px;
+            transition: 0.2s ease-in-out;
+            margin-bottom: 4rem;
+        }
+
+        .ku-box-1:hover {
+            box-shadow: 5px 5px 10px rgba(0, 0, 0, .7);
+        }
+
+        .ku-box-2 {
+            background: #442B7E;
+            padding: 2rem;
+            border-radius: 10px;
+            transition: 0.2s ease-in-out;
+            margin-bottom: 4rem;
+        }
+
+        .ku-box-2:hover {
+            box-shadow: 5px 5px 10px rgba(0, 0, 0, .7);
+        }
+
+        .ku-box-3 {
+            background: #442B7E;
+            padding: 2rem;
+            border-radius: 10px;
+            transition: 0.2s ease-in-out;
+            margin-bottom: 4rem;
+        }
+
+        .ku-box-3:hover {
+            box-shadow: 5px 5px 10px rgba(0, 0, 0, .7);
+        }
+
+        .ku-box-4 {
+            background: #442B7E;
+            padding: 2rem;
+            border-radius: 10px;
+            transition: 0.2s ease-in-out;
+            margin-bottom: 4rem;
+        }
+
+        .ku-box-4:hover {
+            box-shadow: 5px 5px 10px rgba(0, 0, 0, .7);
+        }
+
+        .ku-box-5 {
+            background: #442B7E;
+            padding: 2rem;
+            border-radius: 10px;
+            transition: 0.2s ease-in-out;
+            margin-bottom: 4rem;
+        }
+
+        .ku-box-5:hover {
+            box-shadow: 5px 5px 10px rgba(0, 0, 0, .7);
+        }
+
+        .ku-box-6 {
+            background: #442B7E;
+            padding: 2rem;
+            border-radius: 10px;
+            transition: 0.2s ease-in-out;
+            margin-bottom: 2rem;
+        }
+
+        .ku-box-6:hover {
+            box-shadow: 5px 5px 10px rgba(0, 0, 0, .7);
+        }
+
+        footer {
+            box-shadow: inset 0 0 0 2000px rgba(0, 0, 0, .3);
+            padding: 0 0 1.5rem 0;
+        }
+
+        .footer-info {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            height: 250px;
+        }
+
+        .footer-info h2 {
+            font-size: 2rem;
+        }
+
+        .footer-info p {
+            margin: 1.5rem;
+        }
+
+        .footer-info input {
+            border-radius: 7px;
+            border: none;
+            padding: 0.8rem 1rem;
+            width: 350px;
+        }
+
+        .footer-info button {
+            padding: 0.8rem 1rem;
+            border-radius: 7px;
+            border: none;
+            margin-left: 0.5rem;
+            width: 130px;
+            background-color: #DE3163;
+            color: white;
+            font-size: .9rem;
+        }
+
+        .footer-full-nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .footer-nav ul {
+            display: flex;
+            list-style: none;
+        }
+
+        .footer-nav li {
+            margin-right: 1.5rem;
+        }
+
+        .footer-nav a {
+            text-decoration: none;
+            color: rgb(137, 137, 137);
+            font-size: 1.1rem;
+            transition: 0.4s ease-in-out;
+        }
+
+        .footer-nav a:hover {
+            border-bottom: 3.5px solid #DE3163;
+            padding-bottom: 0.35rem;
+            color: white;
+        }
+
+        .footer-logo {
+            transition: 0.4s ease-in-out;
+            color: white;
+            font-weight: bold;
+            font-size: 2rem;
+        }
+
+        .footer-logo:hover {
+            color: #DE3163;
+        }
+
+        @media (min-width: 993px) and (max-width: 1200px) {
+            header {
+                height: 450px;
+                background-size: cover;
+                background-position: center;
+            }
+            #fb-info {
+                margin: 0 3rem;
+            }
+            footer {
+                padding: 2rem;
+            }
+        }
+
+        @media (min-width: 769px) and (max-width: 992px) {
+            header {
+                height: 450px;
+                background-size: cover;
+                background-position: center;
+            }
+            #fb-info {
+                margin: 0 3rem;
+            }
+            footer {
+                padding: 2rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            header {
+                height: 450px;
+                background-size: cover;
+                background-position: center;
+            }
+            #fb-info {
+                margin: 0 3rem;
+            }
+            footer {
+                padding: 2rem;
+            }
+        }
+
+        @media (min-width: 577px) and (max-width: 660px) {
+            header {
+                height: 450px;
+                background-size: cover;
+                background-position: center;
+            }
+
+            .header-info {
+                padding: 1rem;
+            }
+
+            .header-info h1 {
+                font-size: 3.5rem;
+            }
+            #fb-info {
+                margin: 0 3rem;
+            }
+            footer {
+                padding: 2rem;
+                text-align: center;
+            }
+        }
+
+        @media (min-width: 414px) and (max-width: 576px) {
+            header {
+                height: 400px;
+                background-size: cover;
+                background-position: center;
+            }
+
+            .header-info {
+                padding: 1rem;
+                margin-top: 6rem;
+            }
+
+            .header-info h1 {
+                font-size: 3rem;
+            }
+            #fb-info {
+                margin: 0 3rem;
+            }
+            footer {
+                padding: 1rem;
+                text-align: center;
+            }
+
+            .footer-info h2 {
+                font-size: 1.5rem;
+                margin-bottom: .5rem;
+            }
+
+            .footer-info p {
+                font-size: 1rem;
+                margin: 0;
+                margin-bottom: 1rem;
+            }
+
+            .footer-info form {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .footer-info input {
+                margin-bottom: 1rem;
+            }
+
+            .footer-full-nav {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .footer-nav li a {
+                font-size: 1.1rem;
+            }
+
+            .footer-logo {
+                margin-top: 1rem;
+                font-size: 1.4rem;
+            }
+        }
+
+        @media (max-width: 414px) {
+            header {
+                height: 350px;
+                background-size: cover;
+                background-position: center;
+            }
+
+            .header-info {
+                padding: 1rem;
+                margin-top: 4rem;
+            }
+
+            .header-info h1 {
+                font-size: 2.65rem;
+            }
+            #fb-info {
+                margin: 0 3rem;
+            }
+            footer {
+                padding: 1rem;
+                text-align: center;
+            }
+
+            .footer-info h2 {
+                font-size: 1.5rem;
+                margin-bottom: .5rem;
+            }
+
+            .footer-info p {
+                font-size: 1rem;
+                margin: 0;
+                margin-bottom: 1rem;
+            }
+
+            .footer-info form {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .footer-info input {
+                margin-bottom: 1rem;
+            }
+
+            .footer-full-nav {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .footer-nav li a {
+                font-size: 1.1rem;
+            }
+
+            .footer-logo {
+                margin-top: 1rem;
+                font-size: 1.4rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="container">
+            <nav>
+                <div class="nav-bar">
+                    <div class="nav-r">
+                        <ul>
+                            <li><a href="./index.html">Home</a></li>
+                            <li><a href="#">Profile</a></li>
+                            <li><a href="#">About</a></li>
+                            <li><a href="#" style="color: white;" >Website</a></li>
+                            <li><a href="#">Contact</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+            <div class="header-info">
+                <h1> <span style="color: rgb(255, 255, 255);">ติดตั้ง Website ด้วย <span
+                            style="color: #28B463;">Github</span></h1>
+            </div>
+        </div>
+    </header>
+    <div class="header-footer" style="background-color: #442B7E; height: 50px; position: relative;">
+        <div class="header-footer-in"></div>
+    </div>
+
+    <div class="section" id="fb-info">
+        <div class="container">
+            <div class="ku-box">
+                <img style="margin-right: 1rem;" src="./so1.jpg" alt="Fb-ads">
+                <p>เข้า Website Github พร้อมทั้งเข้าสู่ระบบ และคลิก Dropdown จากนั้นเลือก New repository</p>
+            </div>
+            <div class="ku-box-1">
+                <img src="./so2.jpg" alt="phone">
+                <p>เมื่อกดเข้ามาแล้ว ให้ตั้งชื่อ Repository name (อะไรก็ได้) และติ๊ก Checkbox ที่ตัวเลือก Add a README
+                    file</p>
+            </div>
+            <div class="ku-box-2">
+                <img src="./so3.jpg" alt="">
+                <p>
+                    และทำการกด Create repository
+                </p>
+            </div>
+            <div class="ku-box-3">
+                <img src="./so4.jpg" height="350px" alt="Fb-ads">
+                <p>เมื่อเข้ามาหน้านี้ ให้กด Add file และเลือก Upload files</p>
+            </div>
+            <div class="ku-box-4">
+                <img src="./so5.jpg" height="350px" alt="Fb-ads">
+                <p>อัพโหลดไฟล์งานของเรา (สามารถลากไฟล์ลงไปได้เลย) ต้องเป็นไฟล์ทุกอย่างที่เกี่ยวข้องกับงานเช่น รูปภาพ</p>
+            </div>
+            <div class="ku-box-5">
+                <img src="./so6.jpg" height="350px" alt="Fb-ads">
+                <p>เมื่อเข้ามาหน้านี้ ให้ทำการกด Setting มุมบนขวาของจอ</p>
+            </div>
+            <div class="ku-box-6">
+                <img src="./so7.jpg" height="350px" alt="Fb-ads">
+                <p>กดหัวข้อ Pages และตั้งค่า Branch เป็น main และ /(root) และกด Save
+                    และรอสักพักจะมีหน้าต่างป๊อปอัพขึ้นมาข้างบน ในป๊อปอัพจะมีลิงค์ Website ของเราอยู่สามารถกดเข้าได้เลย
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <div class="header-footer" style="background-color: #442B7E; height: 50px; position: relative;">
+        <div class="header-footer-in"></div>
+    </div>
+    <footer>
+        <div class="container">
+            <div class="footer-info">
+                <h2 style="color: #6495ED;">Thank you for visiting the website.</h2>
+                <p style="color: white;">Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                    Ducimus, recusandae!</p>
+                <form action="" method="post">
+                    <input type="email" placeholder="Enter your email address...">
+                    <button>Sign up now!</button>
+                </form>
+            </div>
+            <div class="footer-full-nav">
+                <div class="footer-nav">
+                    <ul>
+                        <li><a href="#">About</a></li>
+                        <li><a href="#">Contact</a></li>
+                        <li><a href="#">Policy & Privacy</a></li>
+                        <li><a href="#">Terms</a></li>
+                    </ul>
+                </div>
+                <div class="footer-logo">
+                    IT Workshop
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>
